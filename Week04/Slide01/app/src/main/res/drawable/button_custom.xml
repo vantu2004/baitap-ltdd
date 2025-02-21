@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Trạng thái khi button được nhấn -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#D32F2F"/> <!-- Màu khi nhấn -->
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+
+    <!-- Trạng thái mặc định -->
+    <item>
+        <shape android:shape="rectangle">
+
+            <!-- Màu nền -->
+            <solid android:color="#ff0000" /> <!-- Mã màu sửa lại cho đúng định dạng -->
+
+            <!-- Kích thước button -->
+            <size android:height="50dp"
+                android:width="200dp"/>
+
+            <!-- Bo góc button -->
+            <corners android:radius="30dp" />
+
+            <!-- Hiệu ứng gradient -->
+            <gradient android:centerColor="@color/purple_200"/>
+        </shape>
+    </item>
+
+</selector>
