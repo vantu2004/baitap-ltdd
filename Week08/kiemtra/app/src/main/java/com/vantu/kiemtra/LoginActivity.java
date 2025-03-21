@@ -1,6 +1,7 @@
 package com.vantu.kiemtra;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -87,6 +88,27 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 }
+
+//                @Override
+//                public void onResponse(Call<Users> call, Response<Users> response) {
+//                    if (response.isSuccessful() && response.body() != null) {
+//                        String token = response.body().getToken();
+//                        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+//                        sharedPreferences.edit().putString("token", token).apply();
+//
+//                        Snackbar.make(findViewById(android.R.id.content), "Đăng nhập thành công!", Snackbar.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                        startActivity(intent);
+//                        finish();
+//                    } else {
+//                        try {
+//                            // Lấy nội dung lỗi từ server
+//                            String errorMessage = response.errorBody().string();
+//                            Snackbar.make(findViewById(android.R.id.content), errorMessage, Snackbar.LENGTH_LONG).show();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
 
                 @Override
                 public void onFailure(Call<Users> call, Throwable throwable) {
