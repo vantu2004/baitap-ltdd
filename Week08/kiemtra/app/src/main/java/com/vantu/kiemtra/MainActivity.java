@@ -60,14 +60,20 @@ public class MainActivity extends AppCompatActivity {
         ApiClient.apiService.getTopSellers().enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                List<Product> p = response.body();
-                if (p != null){
-                    products = p;
-
-                    productAdapter = new ProductAdapter(MainActivity.this, R.layout.product_item, products);
+                if (response.isSuccessful()) {
+                    for (Product product : response.body()) {
+                        productList.add(new Product(product.getName(), product.getImgPath()));
+                        Log.d("Product", "Name: " + product.getName() + ", ImagePath: " + product.getImgPath());
+                    }
+                    Log.d("Size", String.valueOf(productList.size()));
 
                     // Gán adapter cho GridView
+                    productAdapter = new ProductAdapter(MainActivity.this, R.layout.product_item, productList);
                     gridView.setAdapter(productAdapter);
+
+
+                } else {
+                    Toast.makeText(HomePageActivity.this, "Failed to get response!", Toast.LENGTH_LONG).show();
                 }
             }
 

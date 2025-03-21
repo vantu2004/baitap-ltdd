@@ -1,4 +1,5 @@
-package com.vantu.kiemtra.adapter;
+package com.example.lamthukiemtra.adapter;
+
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,13 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
-import com.vantu.kiemtra.R;
 
-import com.vantu.kiemtra.model.Product;
+import com.bumptech.glide.Glide;
+import com.example.lamthukiemtra.R;
+
+import com.example.lamthukiemtra.model.Product;
 
 import java.util.List;
-
 public class ProductAdapter extends BaseAdapter {
     //khai báo
     private Context context;
@@ -53,6 +56,7 @@ public class ProductAdapter extends BaseAdapter {
             //ánh xạ view
             viewHolder = new ViewHolder();
             viewHolder.textView_productName = (TextView) convertView.findViewById(R.id.textView_productName);
+            viewHolder.imageView_productPic = convertView.findViewById(R.id.imageView_productPic);
 
             convertView.setTag(viewHolder);
         }else{
@@ -63,6 +67,12 @@ public class ProductAdapter extends BaseAdapter {
         Product product = products.get(position);
         viewHolder.textView_productName.setText(product.getName());
 
+        Glide.with(context)
+                .load(product.getImgPath())
+                .into(viewHolder.imageView_productPic);
+
+
+
         //trả về view
         return convertView;
     }
@@ -70,5 +80,7 @@ public class ProductAdapter extends BaseAdapter {
     //tạo class viewholder
     private class ViewHolder{
         TextView textView_productName;
+        ImageView imageView_productPic;
     }
 }
+
