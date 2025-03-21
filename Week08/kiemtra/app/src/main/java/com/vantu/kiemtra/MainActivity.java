@@ -3,6 +3,7 @@ package com.vantu.kiemtra;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Product> products = new ArrayList<>();
     private ProductAdapter productAdapter;
     private GridView gridView;
-
+    private TextView textView_userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        textView_userName = findViewById(R.id.textView_userName);
+
         gridView = findViewById(R.id.grivView_top10);
 
         recyclerView = findViewById(R.id.recycleView_categories);
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         getAllCategories();
         getTopSellers();
+
+        textView_userName.setText(getIntent().getStringExtra("userName"));
     }
 
     private void getTopSellers() {

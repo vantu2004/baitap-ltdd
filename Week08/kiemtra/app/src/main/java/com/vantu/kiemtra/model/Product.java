@@ -1,5 +1,7 @@
 package com.vantu.kiemtra.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -20,6 +22,16 @@ public class Product {
     private String date;
 
     private Category category;
+    @SerializedName("imageUrl")
+    private String imgPath;
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
 
     public Long getId() {
         return id;

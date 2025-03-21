@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.vantu.kiemtra.R;
 
@@ -63,6 +64,7 @@ public class ProductAdapter extends BaseAdapter {
         Product product = products.get(position);
         viewHolder.textView_productName.setText(product.getName());
 
+
         //trả về view
         return convertView;
     }
@@ -70,5 +72,6 @@ public class ProductAdapter extends BaseAdapter {
     //tạo class viewholder
     private class ViewHolder{
         TextView textView_productName;
+        ImageView imageView;
     }
 }
