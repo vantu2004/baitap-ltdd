@@ -22,16 +22,6 @@ public class Product {
     private String date;
 
     private Category category;
-    @SerializedName("imageUrl")
-    private String imgPath;
-
-    public String getImgPath() {
-        return imgPath;
-    }
-
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
-    }
 
     public Long getId() {
         return id;

@@ -72,6 +72,5 @@ public class ProductAdapter extends BaseAdapter {
     //tạo class viewholder
     private class ViewHolder{
         TextView textView_productName;
-        ImageView imageView;
     }
 }
