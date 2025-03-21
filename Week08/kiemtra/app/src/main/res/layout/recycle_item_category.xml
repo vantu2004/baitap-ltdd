@@ -14,50 +14,56 @@
 
     <!-- ConstraintLayout thứ nhất (nền cam) -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FF7D00"
-        android:padding="10dp">
+        android:padding="10dp"
+        tools:ignore="ExtraText">
 
-        <!-- ConstraintLayout thứ hai (nền trắng, nhỏ hơn cha) -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- ImageView nền trắng bo tròn -->
+        <ImageView
+            android:id="@+id/background_image"
             android:layout_width="148dp"
-            android:layout_height="173dp"
-            android:background="@drawable/rounded_bgconstraint"
-            android:padding="8dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_imageitemview"
+            android:scaleType="centerCrop"
+            android:src="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" /> <!-- Dịch xuống để tạo không gian cho ảnh hình tròn -->
 
-            <!-- Hình ảnh hình tròn -->
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_cate"
-                android:layout_width="98dp"
-                android:layout_height="84dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/ic_launcher_background"
-                app:civ_border_color="#FF7D00"
-                app:civ_border_width="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <!-- Hình ảnh hình tròn (đè lên ImageView) -->
 
-            <!-- TextView hiển thị tên món ăn -->
-            <TextView
-                android:id="@+id/tv_nameCategory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Beef and Mustard Pie"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/image_cate"
-                app:layout_constraintStart_toStartOf="@id/image_cate"
-                app:layout_constraintTop_toBottomOf="@id/image_cate" />
+        <!-- TextView hiển thị tên món ăn -->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_cate"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="#FF7D00"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_nameCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beef and Mustard Pie"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/background_image"
+            app:layout_constraintStart_toStartOf="@id/background_image"
+            app:layout_constraintTop_toBottomOf="@id/image_cate"
+            android:layout_marginTop="8dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
