@@ -4,8 +4,11 @@ import com.vantu.kiemtra.model.Users;
 import com.vantu.kiemtra.request.RegisterRequest;
 import com.vantu.kiemtra.response.RegisterResponse;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -22,5 +25,7 @@ public interface ApiService {
     @POST("verify")
     Call<String> verify(@Query("email") String email,
                                   @Query("otp") String otp);
+    @GET("main")
+    Call<List<Users>> getUsers();
 }
 
