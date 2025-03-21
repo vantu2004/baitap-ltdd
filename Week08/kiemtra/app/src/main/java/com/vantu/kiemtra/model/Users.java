@@ -7,6 +7,15 @@ public class Users {
     private String password;
     private String otp;
     private boolean verified;
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public Users() {
     }

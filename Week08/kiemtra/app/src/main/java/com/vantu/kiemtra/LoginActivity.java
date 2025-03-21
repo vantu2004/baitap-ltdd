@@ -1,6 +1,7 @@
 package com.vantu.kiemtra;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -36,6 +37,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", null);
+
+        if (token != null && !token.isEmpty()) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish(); // Đóng LoginActivity để không thể quay lại màn hình đăng nhập
+        }
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -75,8 +84,14 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Users> call, Response<Users> response) {
                     if (response.isSuccessful() && response.body() != null) {
+                        String token = response.body().getToken();
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+                        sharedPreferences.edit().putString("token", token).apply();
+
+                        Snackbar.make(findViewById(android.R.id.content), "Đăng nhập thành công!", Snackbar.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                     } else {
                         try {
                             // Lấy nội dung lỗi từ server
