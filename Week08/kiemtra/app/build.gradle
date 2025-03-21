@@ -5,6 +5,9 @@ plugins {
 android {
     namespace 'com.vantu.kiemtra'
     compileSdk 35
+    buildFeatures{
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId "com.vantu.kiemtra"
@@ -44,4 +47,6 @@ dependencies {
     implementation libs.retrofit
     // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
     implementation libs.converter.gson
+
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 }
