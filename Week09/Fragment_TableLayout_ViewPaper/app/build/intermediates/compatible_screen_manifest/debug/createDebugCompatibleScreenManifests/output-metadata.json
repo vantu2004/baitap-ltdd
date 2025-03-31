@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "COMPATIBLE_SCREEN_MANIFEST",
+    "kind": "Directory"
+  },
+  "applicationId": "com.vantu.fragment_tablelayout_viewpaper",
+  "variantName": "debug",
+  "elements": []
+}

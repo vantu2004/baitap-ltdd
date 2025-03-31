@@ -1,0 +1,32 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable baseline_chat_24
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id appbar
+id fab_action
+id main
+id menuBroadcast
+id menuMessage
+id menuNewGroup
+id menuSearch
+id menuSetting
+id menuWeb
+id menu_More
+id nestedScrollView
+id tabLayout
+id toolbar
+id viewPaper2
+layout activity_main
+layout fragment_new_order
+menu menu
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string hello_blank_fragment
+style Base.Theme.Fragment_TableLayout_ViewPaper
+style Theme.Fragment_TableLayout_ViewPaper
+xml backup_rules
+xml data_extraction_rules
