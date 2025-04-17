@@ -115,10 +115,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void CheckPermission() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            openGallery();
-            return;
-        }
 
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             openGallery();

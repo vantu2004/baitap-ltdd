@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView_ownerId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Owner ID"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_ownerType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Owner Type"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_ownerType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_ownerType" />
+
+    <EditText
+        android:id="@+id/editText_ownerType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_ownerType"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ownerId" />
+
+    <EditText
+        android:id="@+id/editText_ownerId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_ownerId"
+        app:layout_constraintEnd_toEndOf="@+id/editText_ownerType"
+        app:layout_constraintStart_toStartOf="@+id/editText_ownerType"
+        app:layout_constraintTop_toTopOf="@+id/textView_ownerId" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_upload"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:foregroundGravity="bottom|right"
+        app:circularflow_defaultRadius="0dp"
+        app:circularflow_radiusInDP="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ownerType"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/textView_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/editText_ownerType"
+        app:layout_constraintTop_toBottomOf="@+id/button_upload" />
+
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView_id"
+        app:layout_constraintTop_toBottomOf="@+id/textView_id" />
+
+    <TextView
+        android:id="@+id/textView_downloadUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_name" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_showImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:foregroundGravity="bottom|right"
+        app:circularflow_defaultRadius="0dp"
+        app:circularflow_radiusInDP="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/button_upload"
+        app:layout_constraintStart_toStartOf="@+id/button_upload"
+        app:layout_constraintTop_toBottomOf="@+id/textView_downloadUrl" />
+
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="UPLOAD"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/button_select"
+        app:layout_constraintStart_toStartOf="@+id/button_select"
+        app:layout_constraintTop_toBottomOf="@+id/button_select" />
+
+    <Button
+        android:id="@+id/button_select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="SELECT"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_upload" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        app:layout_constraintStart_toStartOf="@+id/button_upload"
+        app:layout_constraintTop_toTopOf="@+id/textView_id" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_name" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download URL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_downloadUrl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

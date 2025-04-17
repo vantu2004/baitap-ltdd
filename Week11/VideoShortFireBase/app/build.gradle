@@ -1,0 +1,62 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.vantu.videoshortfirebase'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.vantu.videoshortfirebase"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // Thư viện Google Play Services dùng để tích hợp Google Sign-In (xác thực người dùng với tài khoản Google)
+    implementation libs.play.services.auth
+
+    /** Firebase dependencies */
+
+    // Firebase Authentication: Xác thực người dùng (email/password, Google, Facebook, v.v.)
+    implementation libs.firebase.auth
+    // Firebase Realtime Database: Cơ sở dữ liệu thời gian thực, lưu trữ dữ liệu dạng JSON
+    implementation libs.firebase.database
+    // Firebase BOM (Bill of Materials): Giúp đồng bộ version giữa các thư viện Firebase, tránh xung đột phiên bản
+    implementation platform(libs.firebase.bom)
+    // Firebase Realtime Database KTX: Phiên bản tối ưu cho Kotlin, giúp code gọn và dễ đọc hơn
+    implementation libs.firebase.database.ktx
+    // Firebase Firestore: Cơ sở dữ liệu NoSQL hiện đại, hỗ trợ truy vấn phức tạp và đồng bộ thời gian thực
+    implementation libs.firebase.firestore
+    // Firebase Cloud Storage: Lưu trữ và truy xuất tệp tin như hình ảnh, video, PDF...
+    implementation libs.firebase.storage
+    // Firebase UI cho Realtime Database: Cung cấp các adapter có sẵn như FirebaseRecyclerAdapter để hiển thị dữ liệu lên RecyclerView dễ dàng
+    implementation libs.firebase.ui.database
+
+}
